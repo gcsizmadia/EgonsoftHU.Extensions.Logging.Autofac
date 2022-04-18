@@ -152,7 +152,7 @@ builder.RegisterModule<EgonsoftHU.Extensions.Logging.Autofac.DependencyModule>()
 ```C#
 // Step #1: Configure assembly registry
 //
-// Add nameof(EgonsoftHU) as an assembly file name prefix.
+// Add nameof(EgonsoftHU) as an additional assembly file name prefix.
 builder.UseDefaultAssemblyRegistry(nameof(YourCompany), nameof(EgonsoftHU));
 
 // Step #2: Register the module that will discover and register all other modules.
