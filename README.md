@@ -55,7 +55,13 @@ You can download the package from [nuget.org](https://www.nuget.org/).
 - [EgonsoftHU.Extensions.Logging.Autofac 5.0.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Autofac/5.0.0)
 - [EgonsoftHU.Extensions.Logging.Autofac 6.0.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Autofac/6.0.0)
 
-**Please note:** Each package version reflects the major version of the referenced Autofac nuget package.
+**Please note:** Each package version reflects the major version of the referenced Autofac nuget package as below.
+
+|EgonsoftHU.Extensions.Logging.Autofac|Autofac|
+|:-:|:-:|
+|4.0.0|4.9.4|
+|5.0.0|5.2.0|
+|6.0.0|6.3.0|
 
 You can find the release notes [here](https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Autofac/releases).
 
@@ -145,8 +151,14 @@ builder.RegisterModule<EgonsoftHU.Extensions.Logging.Autofac.DependencyModule>()
 
 ```C#
 // Step #1: Configure assembly registry
-builder.UseDefaultAssemblyRegistry(nameof(YourCompany), nameof(EgonsoftHU)); // <-- Add nameof(EgonsoftHU) as an assembly file name prefix.
+//
+// Add nameof(EgonsoftHU) as an assembly file name prefix.
+builder.UseDefaultAssemblyRegistry(nameof(YourCompany), nameof(EgonsoftHU));
 
-// Step #2: Register the module that will discover and register all other modules, including EgonsoftHU.Extensions.Logging.Autofac.DependencyModule as well.
+// Step #2: Register the module that will discover and register all other modules.
+//
+// This will register EgonsoftHU.Extensions.Logging.Autofac.DependencyModule as well.
 builder.RegisterModule<EgonsoftHU.Extensions.DependencyInjection.Autofac.DependencyModule>();
 ```
+
+Click [here](https://github.com/gcsizmadia/EgonsoftHU.Extensions.DependencyInjection.Autofac) to learn more about the `EgonsoftHU.Extensions.DependencyInjection.Autofac` nuget package.
