@@ -11,8 +11,8 @@ A dependency module (derived from Autofac.Module) that enables injecting the sam
 - [Releases](#releases)
 - [Summary](#summary)
 - [Instructions](#instructions)
-  - [Usage option #1 - Register the module explicitly](#usage-option-1-register-the-module-explicitly)
-  - [Usage option #2 - Register the module implicitly by using `EgonsoftHU.Extensions.DependencyInjection.Autofac` nuget package](#usage-option-2-register-the-module-implicitly-by-using-egonsofthu.extensions.dependencyinjection.autofac-nuget-package)
+  - [Usage option #1 - Register the module explicitly](#usage-option-1---register-the-module-explicitly)
+  - [Usage option #2 - Register the module implicitly by using `EgonsoftHU.Extensions.DependencyInjection.Autofac` nuget package](#usage-option-2---register-the-module-implicitly-by-using-egonsofthuextensionsdependencyinjectionautofac-nuget-package)
 
 ## Introduction
 
