@@ -6,6 +6,8 @@ using System;
 using Autofac;
 using Autofac.Core.Registration;
 
+using EgonsoftHU.Extensions.Logging.Serilog;
+
 using FluentAssertions;
 
 using Microsoft.Extensions.Logging;

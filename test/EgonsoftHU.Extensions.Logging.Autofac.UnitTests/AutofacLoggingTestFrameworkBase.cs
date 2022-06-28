@@ -4,6 +4,7 @@
 using Autofac;
 
 using EgonsoftHU.Extensions.DependencyInjection.Autofac;
+using EgonsoftHU.Extensions.Logging.Serilog;
 
 using Serilog;
 
