@@ -1,14 +1,12 @@
 ﻿// Copyright © 2022 Gabor Csizmadia
 // This code is licensed under MIT license (see LICENSE for details)
 
-using System.Linq;
+using System.Collections.Generic;
 
 using Autofac;
 using Autofac.Core;
 using Autofac.Core.Registration;
 using Autofac.Core.Resolving.Pipeline;
-
-using EgonsoftHU.Extensions.Bcl;
 
 using Microsoft.Extensions.Logging;
 
@@ -21,9 +19,9 @@ namespace EgonsoftHU.Extensions.Logging.Autofac
     public class DependencyModule : Module
     {
         private static readonly ResolvedParameter loggerParameter =
-            new ResolvedParameter(
+            new(
                 (parameter, context) => typeof(ILogger) == parameter.ParameterType,
-                (parameter, context) => context.Resolve(typeof(ILogger<>).MakeGenericType(parameter.Member.DeclaringType))
+                (parameter, context) => context.Resolve(typeof(ILogger<>).MakeGenericType(parameter.Member.DeclaringType ?? typeof(object)))
             );
 
         /// <inheritdoc/>
@@ -37,7 +35,7 @@ namespace EgonsoftHU.Extensions.Logging.Autofac
                     MiddlewareInsertionMode.StartOfPhase,
                     (context, next) =>
                     {
-                        var parameters = context.Parameters.Union(loggerParameter.AsEnumerable()).ToList();
+                        var parameters = new List<Parameter>(context.Parameters) { loggerParameter };
 
                         context.ChangeParameters(parameters);
 

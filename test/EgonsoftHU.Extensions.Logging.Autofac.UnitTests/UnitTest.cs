@@ -16,19 +16,20 @@ namespace EgonsoftHU.Extensions.Logging.Autofac.UnitTests
     [UseAutofacTestFramework]
     public abstract class UnitTest<T> : IClassFixture<LoggingFixture<T>>, IDisposable
     {
+        private readonly ITestOutputHelper output;
         private readonly LoggingFixture<T> fixture;
 
         protected UnitTest(ILifetimeScope lifetimeScope, ITestOutputHelper output, LoggingFixture<T> fixture)
         {
             Scope = lifetimeScope.BeginLifetimeScope();
-
+            this.output = output;
             this.fixture = fixture;
             fixture.InitializeLogger(output);
         }
 
         protected ILifetimeScope Scope { get; private set; }
 
-        protected ILogger Logger => fixture.Logger;
+        protected ILogger Logger => fixture.Logger ?? fixture.InitializeLogger(output);
 
         #region Dispose pattern implementation
 
@@ -41,7 +42,7 @@ namespace EgonsoftHU.Extensions.Logging.Autofac.UnitTests
                 if (isDisposing)
                 {
                     Scope.Dispose();
-                    Scope = null;
+                    Scope = default!;
                 }
 
                 isDisposed = true;

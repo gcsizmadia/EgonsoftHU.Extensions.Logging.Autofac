@@ -2,6 +2,7 @@
 // This code is licensed under MIT license (see LICENSE for details)
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text;
 
@@ -22,16 +23,20 @@ namespace EgonsoftHU.Extensions.Logging.Autofac.UnitTests
 
         private static readonly CompactJsonFormatter formatter = new CompactJsonFormatter();
 
-        public ILogger Logger { get; private set; }
+        public ILogger? Logger { get; private set; }
 
-        public void InitializeLogger(ITestOutputHelper output)
+        [MemberNotNull(nameof(Logger))]
+        public ILogger InitializeLogger(ITestOutputHelper output)
         {
             Logger = CreateLogger(output);
+            return Logger;
         }
 
-        public void InitializeLogger(IMessageSink output)
+        [MemberNotNull(nameof(Logger))]
+        public ILogger InitializeLogger(IMessageSink output)
         {
             Logger = CreateLogger(output);
+            return Logger;
         }
 
         private static ILogger CreateLogger(object output)
