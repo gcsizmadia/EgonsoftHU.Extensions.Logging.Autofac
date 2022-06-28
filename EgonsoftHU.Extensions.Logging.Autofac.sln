@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EgonsoftHU.Extensions.Loggi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EgonsoftHU.Extensions.Logging.AutofacV5.UnitTests", "test\EgonsoftHU.Extensions.Logging.AutofacV5.UnitTests\EgonsoftHU.Extensions.Logging.AutofacV5.UnitTests.csproj", "{6CED6FED-FEE5-4C0C-8768-961A4E2CDA92}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Autofac_v6_3_0", "02_Autofac_v6_3_0", "{08A289D1-D82B-4D63-A8F5-786851F4EEF1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Autofac_v6_4_0", "02_Autofac_v6_4_0", "{08A289D1-D82B-4D63-A8F5-786851F4EEF1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EgonsoftHU.Extensions.Logging.AutofacV6", "src\EgonsoftHU.Extensions.Logging.AutofacV6\EgonsoftHU.Extensions.Logging.AutofacV6.csproj", "{E5BDC9B9-0550-46AB-B885-87E14357E107}"
 EndProject
