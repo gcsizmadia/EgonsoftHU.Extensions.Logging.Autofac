@@ -11,7 +11,9 @@
     <Title>Egonsoft.HU Logging Extensions for Autofac</Title>
     <Description>A dependency module (derived from Autofac.Module) that enables injecting the same contextual logger as ILogger instead of ILogger&lt;TCategoryName&gt;</Description>
     <Summary>A dependency module (derived from Autofac.Module) that enables injecting the same contextual logger as ILogger instead of ILogger&lt;TCategoryName&gt;</Summary>
-    <Copyright>Copyright © 2022 Gabor Csizmadia</Copyright>
+    <!--
+    <Copyright></Copyright>
+    -->
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Autofac</PackageProjectUrl>
