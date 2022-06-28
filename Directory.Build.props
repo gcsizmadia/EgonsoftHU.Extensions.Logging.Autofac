@@ -27,4 +27,15 @@ This code is licensed under MIT license (see LICENSE for details)
     <ApplicationManifest>$(SolutionDir)src\$(MSBuildProjectName)\app.manifest</ApplicationManifest>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(ProjectFolder)' == 'test'">
+    <Title>$(MSBuildProjectName)</Title>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(ProjectFolder)' == 'test' And '$(MSBuildProjectName)' != 'EgonsoftHU.Extensions.Logging.Autofac.UnitTests'">
+    <AssemblyAttribute Include="Xunit.TestFrameworkAttribute">
+      <_Parameter1>EgonsoftHU.Extensions.Logging.Autofac.UnitTests.AutofacLoggingTestFramework</_Parameter1>
+      <_Parameter2>$(MSBuildProjectName)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>
